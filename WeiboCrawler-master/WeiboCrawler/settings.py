@@ -14,21 +14,37 @@ BOT_NAME = 'WeiboCrawler'
 SPIDER_MODULES = ['WeiboCrawler.spiders']
 NEWSPIDER_MODULE = 'WeiboCrawler.spiders'
 
-# 绕过天猫robots.txt
+# 绕过robots.txt
 ROBOTSTXT_OBEY = False
 
 # Output .csv in D:/
 FEED_URI = u'results.csv'
 FEED_FORMAT = 'CSV'
 
+#设置monogdb数据库相关信息
+MONGODB_HOST= '127.0.0.1'
+MONGODB_PORT = 27017
+MONGODB_DBNAME= 'spiderdb'
+MONGODB_DOCNAME= 'sinaweibo'
+
+
+LOG_STDOUT = True 
+LOG_LEVEL = 'ERROR'
+LOG_FILE = 'sinaweibo.log'
+
+
+
+
 DOWNLOADER_MIDDLEWARES = {
     "WeiboCrawler.middlewares.UserAgentMiddleware": 401,
     "WeiboCrawler.middlewares.CookiesMiddleware": 402,
 }
-
+#配置管道信息
 ITEM_PIPELINES = {
     'WeiboCrawler.pipelines.WeibocrawlerPipeline': 300,
 }
+#设置延迟秒数
+DOWNLOAD_DELAY = 0.25
 
 # Crawl responsibly by identifying yourself (and your website) on the user-agent
 #USER_AGENT = 'WeiboCrawler (+http://www.yourdomain.com)'
