@@ -1,7 +1,7 @@
 # PythonSpider
 功能：python+scrapy实现网络爬虫，爬取微博南京地铁两年数据
 
-环境：win67或者以上(64位)/linux+python2.7.13(64（位置)+scrapy1.1.0
+环境：win67或者以上(64位)/linux+python2.7.13(64（位)+scrapy1.1.0
 
 使用方法：cmd->python main.py->输入关键字，输出的结果可以选择保存至磁盘即在main.py同级目录下的result.csv文件中，也可以选择保存之MongoDB数据库
 
