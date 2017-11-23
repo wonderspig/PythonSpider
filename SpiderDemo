@@ -1,0 +1,29 @@
+1.模仿百度查询
+# -*- coding: UTF-8 -*-
+import urllib2
+import urllib
+
+url="http://www.baidu.com/s"
+keyword=raw_input("请输入要查询的字符串:")
+
+#使用urllib进行编码
+wd={"wd":keyword}
+wd=urllib.urlencode(wd)
+
+#不需要添加头部
+headers={"User-Agent":"Mozilla..."}
+
+fullurl=url+"?"+wd
+
+request=urllib2.Request(fullurl,headers=headers)
+
+response=urllib2.urlopen(request)
+
+#打印搜寻的结果
+print response.read()
+
+#打印url
+print response.geturl()
+
+
+
